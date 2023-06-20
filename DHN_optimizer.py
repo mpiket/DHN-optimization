@@ -17,11 +17,11 @@ def merge4(list1, list2, list3, list4):
     return merged_list
 
 df_nodes = pd.read_excel(
-    r"C:\Users\marti\OneDrive\Bureaublad\2.xlsx", sheet_name='Sheet1') # Read the nodes
+    r"C:Path", sheet_name='Sheet1') # Read the nodes
 df_edges = pd.read_excel(
-    r"C:\Users\marti\OneDrive\Bureaublad\1.xlsx", sheet_name='Sheet1') # Read to the street network
+    r"C:Path", sheet_name='Sheet1') # Read to the street network
 df_edges_in = pd.read_excel(
-    r"C:\Users\marti\OneDrive\Bureaublad\3.xlsx", sheet_name='Sheet1') # Read the streets with demand
+    r"C:Path", sheet_name='Sheet1') # Read the streets with demand
 
 from_ = df_edges['from']
 to_ = df_edges['to']
@@ -242,7 +242,7 @@ cost_after_edge_turn = func_after_edge_turn[3]
 cost_out = cost_after_edge_turn
 
 # Save the intermediate solution.
-with open(r"C:\Users\marti\OneDrive\Bureaublad\notsimple\cost_edge_turn.txt", 'w') as f:
+with open(r"C:Path.txt", 'w') as f:
     for line in start_network:
         f.write(f"{line}\n")
 
@@ -604,7 +604,7 @@ for x in edges:
     print(index, cost_in, len(network), ((cost_in-cost_out)/(cost_out))*100 )       
 
 # Save the best network fount with valency shuffle.
-with open(r"C:\Users\marti\OneDrive\Bureaublad\notsimple\cost_after_valency.txt", 'w') as f:
+with open(r"C:Path.txt", 'w') as f:
     for line in best_network:
         f.write(f"{line}\n")
 
@@ -663,7 +663,7 @@ for x in after_VS:
 
 #Save the final network
 
-with open(r"C:\Users\marti\OneDrive\Bureaublad\notsimple\verylastbestcost.txt", 'w') as f:
+with open(r"C:Path.txt", 'w') as f:
     for line in best_network:
         f.write(f"{line}\n")
     
